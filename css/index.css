@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/*标题1文字*/
+h1 {
+	color: #ffffff;
+	padding-top: 100px;
+}
+
+p a {
+	color: #ffffff;
+}
+
+/*主容器*/
+#content {
+	width: 960px;
+	margin: 50px auto 0;
+}
+
+#content ul {
+	width: 980px;
+}
+
+#content ul li {
+	float: left;
+	margin-right: 20px;
+}
+
+#content ul li a {
+	display: block;
+	width: 225px;
+	height: 180px;
+	position: relative;
+	/*远近度*/
+	perspective:400px;
+}
+
+#content ul li a img {
+	display: block;
+}
+
+/*正面内容*/
+#content .forward {
+	position: absolute;
+	transition:all 0.8s ease-in-out;
+	/*3d效果*/
+	transform-style:preserve-3d;
+	/*旋转到背面不可视*/
+	backface-visibility:hidden;
+	z-index: 1;
+}
+
+#content ul li a:hover .forward {
+	transform:rotateY(-180deg);
+}
+
+#content .forward .tips {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	line-height: 24px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 12px;
+	background: rgba(0,0,0,0.7);
+}
+
+/*背面内容*/
+#content .back {
+	position: absolute;
+	transition:all 0.8s ease-in-out;
+	/*3d效果*/
+	transform-style:preserve-3d;
+	/*旋转到背面不可视*/
+	backface-visibility:hidden;
+	width: 225px;
+	height: 180px;
+	background: url(../images/bg.jpg) no-repeat;
+	transform:rotateY(180deg);
+}
+
+#content ul li a:hover .back {
+	transform:rotateY(0deg);
+}
+
+#content .back h3 {
+	line-height: 16px;
+	color: #ffffff;
+	text-align: center;
+	padding: 15px 0;
+	border-bottom: 1px dashed #ffffff;
+	margin-bottom: 15px;
+}
+
+#content .back p {
+	color: #ffffff;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 0 10px;
+	text-indent: 2em;
+}
